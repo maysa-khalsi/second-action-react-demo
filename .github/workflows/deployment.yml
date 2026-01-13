@@ -4,10 +4,13 @@ on:
   push:
     branches:
       - main
+      - dev-*
+      - feature
   pull_request:
+    types: [opened, reopened]
     branches:
-      - main 
-      
+      - main  
+
   workflow_dispatch:
 
 jobs:
@@ -41,3 +44,4 @@ jobs:
         run: npm run build
       - name: Deploy
         run: echo "Simulated deployment complete"
+#added feature 
